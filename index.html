@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=640,target-densitydpi=320,user-scalable=no">
+	<title></title>
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			overflow: hidden;
+		}	
+		.first{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-image: url(img/bg1.jpg);
+			background-size: cover;
+		}
+		.tips{
+			width: 240px;
+			height: 39px;
+			position: absolute;
+			left: 200px;
+			top: 900px;
+			background-image: url(img/tips.png);
+		}
+		.yun1{
+			width: 235px;
+			height: 76px;
+			position: absolute;
+			left: -240px;
+			top: 360px;
+			background-image: url(img/yun1.png);
+			animation: piao1 8s ease-in-out infinite;
+		}
+		.yun2{
+			width: 102px;
+			height: 42px;
+			position: absolute;
+			right: -100px;
+			top: 250px;
+			background-image: url(img/yun2.png);
+			animation: piao2 8s ease-in-out infinite;
+		}
+		.yun3{
+			width: 71px;
+			height: 35px;
+			position: absolute;
+			left: -100px;
+			top: 150px;
+			background-image: url(img/yun3.png);
+			animation: piao1 7s ease-in-out infinite;
+		}
+		@keyframes piao1{
+			from{
+				transform: translateX(0);
+			}
+			to{
+				transform: translateX(900px);
+			}
+		}
+		@keyframes piao2{
+			from{
+				transform: translateX(0);
+			}
+			to{
+				transform: translateX(-900px);
+			}
+		}
+		.poem,.pay{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-image: url(img/bg2.jpg);
+			background-size: cover;
+			display: none;
+		}
+		.lun{
+			width: 100%;
+			height: 610px;
+			position: absolute;
+			left: 0;
+			top: 160px;
+		}
+		.huang{
+			animation: huang 1s linear infinite;
+		}
+		.huan{
+			animation: huang 1s linear .5s infinite;
+		}
+		@keyframes huang{
+			0%{
+				transform: translateX(0px);
+			}
+			30%{
+				transform: translateX(10px);
+			}
+			70%{
+				transform: translate(-10px);
+			}
+			100%{
+				transform: translateX(0px);
+			}
+		}
+		.play{
+			width: 75px;
+			height: 75px;
+			position: absolute;
+			left: 282px;
+			top: 428px;
+			background-image: url(img/btn_play.png);
+		}
+		.learn{
+			width: 452px;
+			height: 75px;
+			position: absolute;
+			left: 94px;
+			top: 790px;
+			background-image: url(img/learn_more.png);
+		}
+		.more{
+			width: 90px;
+			height: 22px;
+			position: absolute;
+			bottom: 12px;
+			right: 36px;
+		}
+		.liu-btn{
+			width: 419px;
+			height: 82px;
+			position: absolute;
+			left: 110px;
+			top: 880px;
+			background-image: url(img/btn_liuxia.png);
+		}
+		.xinfeng{
+			width: 559px;
+			height: 930px;
+			position: absolute;
+			left: 40px;
+			top: 30px;
+			background-image: url(img/xinfeng.png);
+		}
+		.pay-btn{
+			-webkit-appearance: none;
+			width: 282px;
+			height: 73px;
+			position: absolute;
+			left: 59px;
+			top: 280px;
+			background: transparent;
+			border: none;
+			background-image: url(img/btn_queding.png);
+		}
+		.endpage{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-image: url(img/bg3.jpg);
+			display: none;
+		}
+		.poemend{
+			width: 440px;
+			height: 442px;
+			position: absolute;
+			left: 100px;
+			top: 370px;
+		}
+		.heads{
+			width:114px;
+			height:114px;
+			position: absolute;
+			left: 262px;
+			top: 112px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		.head{
+			width: 100%;
+			height: 100%;
+		}
+		.result{
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0.01;
+		}
+		.money{
+			width: 400px;
+			height: 400px;
+			position: absolute;
+			left: 70px;
+			top: 140px;
+		}
+		.mm{
+			width: 180px;
+			height: 60px;
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			-webkit-appearance: none;
+			background: transparent;
+			border-radius: 30px;
+			box-sizing: border-box;
+			border: 1px solid #7c8eb4;
+			text-align: center;
+			font-size: 28px;
+			color: #7c8eb4;
+			line-height: 60px;
+		}	
+		.m-two{
+			left: 210px;
+		}
+		.m-three{
+			top: 90px;
+		}
+		.act{
+			background: #7c8eb4;
+			color: #fff;
+		}
+		.self{
+			width: 376px;
+			height: 61px;
+			position: absolute;
+			left: 12px;
+			top: 190px;
+			background-image: url(img/money_custom.png);
+		}
+		.custom{
+			width: 132px;
+			height: 34px;
+			position: absolute;
+			left: 170px;
+			top: 10px;
+			border: none;
+			background: transparent;
+			text-align: center;
+			font-size: 22px;
+		}
+		.slogan{
+			width: 188px;
+			height: 336px;
+			position: absolute;
+			left: 226px;
+			top: 180px;
+			background-image: url(img/slogan.png);
+		}
+		.book{
+			width: 380px;
+			height: 291px;
+			position: absolute;
+			left: 130px;
+			top: 560px;
+			background-image: url(img/book.gif);
+		}
+		.reselect{
+			width: 143px;
+			height: 29px;
+			position: absolute;
+			left: 134px;
+			top: 376px;
+			background-image: url(img/reselect.png);
+		}
+		.haiyao{
+			width: 283px;
+			height: 61px;
+			position: absolute;
+			left: 188px;
+			top: 780px;
+			background-image: url(img/haiyao.png);
+		}
+	</style>
+	<body>
+		<audio id="audio0" class="audios" src="audio/audio_1.mp3"></audio>
+		<audio id="audio1" class="audios" src="audio/audio_2.mp3"></audio>
+		<audio id="audio2" class="audios" src="audio/audio_3.mp3"></audio>
+		<audio id="audio3" class="audios" src="audio/audio_4.mp3"></audio>
+		<audio id="audio4" class="audios" src="audio/audio_5.mp3"></audio>
+		<audio id="audio5" class="audios" src="audio/audio_6.mp3"></audio>
+		<audio id="audio6" class="audios" src="audio/audio_7.mp3"></audio>
+		<audio id="audio7" class="audios" src="audio/audio_8.mp3"></audio>
+		<audio id="audio8" class="audios" src="audio/audio_9.mp3"></audio>
+		<audio id="audio9" class="audios" src="audio/audio_10.mp3"></audio>
+		<audio id="audio10" class="audios" src="audio/audio_11.mp3"></audio>
+		<audio id="audio11" class="audios" src="audio/audio_12.mp3"></audio>
+		<audio id="audio12" class="audios" src="audio/audio_13.mp3"></audio>
+		<audio id="audio13" class="audios" src="audio/audio_14.mp3"></audio>
+		<audio id="audio14" class="audios" src="audio/audio_15.mp3"></audio>
+		<!--首页-->
+		<div class="first">
+			<div class="yun1"></div>
+			<div class="yun2"></div>
+			<div class="yun3"></div>
+			<div class="slogan"></div>
+			<div class="book"></div>
+			<div class="tips"></div>
+		</div>
+		<!--听诗-->
+		<div class="poem">
+			<div class="lun">
+				<div class="swiper-container" style="background: none;">
+					<div class="swiper-wrapper">
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;"  src="img/poem_1.png" alt="" />
+							<div class="play" data-id = "0"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_2.png" alt="" />
+							<div class="play" data-id = "1"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_3.png" alt="" />
+							<div class="play" data-id = "2"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_4.png" alt="" />
+							<div class="play" data-id = "3"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_5.png" alt="" />
+							<div class="play" data-id = "4"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_6.png" alt="" />
+							<div class="play" data-id = "5"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_7.png" alt="" />
+							<div class="play" data-id = "6"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_8.png" alt="" />
+							<div class="play" data-id = "7"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_9.png" alt="" />
+							<div class="play" data-id = "8"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_10.png" alt="" />
+							<div class="play" data-id = "9"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_11.png" alt="" />
+							<div class="play" data-id = "10"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_12.png" alt="" />
+							<div class="play" data-id = "11"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_13.png" alt="" />
+							<div class="play" data-id = "12"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_14.png" alt="" />
+							<div class="play" data-id = "13"></div>
+						</section>
+						<section class="swiper-slide">
+							<img style="margin-left: 86px;" src="img/poem_15.png" alt="" />
+							<div class="play" data-id = "14"></div>
+						</section>
+					</div>
+					<div class="swiper-button-prev huang" style="width: 39px;height: 51px;background-image: url(img/left.png);"></div>
+					<div class="swiper-button-next huan" style="width: 39px;height: 51px;background-image: url(img/right.png);"></div>
+				</div>				
+			</div>
+			<div class="learn"><div class="more"></div></div>
+			<!--按钮-->
+			<div class="liu-btn"></div>
+		</div>
+		<!--付款-->
+		<div class="pay">
+			<div class="xinfeng">
+				<div class="money">
+					<div class="m-one mm">9.9元</div>
+					<div class="m-two mm">19元</div>
+					<div class="m-three mm">99元</div>
+					<div class="self">
+						<input class="custom" type="number" value="" />
+					</div>
+					<button class="pay-btn" onclick="payfor()"></button>
+					<div class="reselect"></div>
+				</div>
+			</div>
+			
+		</div>
+		<!--生成页面-->
+		<div class="endpage">
+			<div class="heads"><img class="head" src="img/head.jpg" alt="" /></div>
+			<div class="poemend"><img class="poemin" src="" alt="" /></div>
+			<img class="result" src="" alt="" />
+			<div class="haiyao"></div>
+		</div>
+	</body>
+	<script src="js/jquery.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script>
+		//去掉弹窗连接提示
+		window.alert = function(name){
+		 var iframe = document.createElement("IFRAME");
+		iframe.style.display="none";
+		iframe.setAttribute("src", 'data:text/plain,');
+		document.documentElement.appendChild(iframe);
+		window.frames[0].window.alert(name);
+		iframe.parentNode.removeChild(iframe);
+		}
+		var poem1=[
+			"img/poemfinal_1.png",
+			"img/poemfinal_2.png",
+			"img/poemfinal_3.png",
+			"img/poemfinal_4.png",
+			"img/poemfinal_5.png",
+			"img/poemfinal_6.png",
+			"img/poemfinal_7.png",
+			"img/poemfinal_8.png",
+			"img/poemfinal_9.png",
+			"img/poemfinal_10.png",
+			"img/poemfinal_11.png",
+			"img/poemfinal_12.png",
+			"img/poemfinal_13.png",
+			"img/poemfinal_14.png",
+			"img/poemfinal_15.png",
+		]
+		$(".tips,.book").click(function(){
+			$(".poem").fadeIn();
+				var mySwiper = new Swiper('.swiper-container',{	
+					autoplayDisableOnInteraction : false,
+					slidesPerView: 1,
+				    loop: true,
+				    pagination: {
+				        el: '.swiper-pagination',
+				        clickable: true,
+				    },
+				    navigation: {
+					    nextEl: '.swiper-button-next',
+					    prevEl: '.swiper-button-prev',
+					},
+				    observer: true,//修改swiper自己或子元素时，自动初始化swiper
+				　　 observeParents: true,//修改swiper的父元素时，自动初始化swiper
+				on:{
+					tap:function(e){						
+						var data=e.target.className;
+						if(data=="play"){
+							var num=e.target.dataset.id;
+							var BGM=$("#audio"+num)[0];
+							for(var i=0;i<15;i++){
+								$(".audios")[i].pause();
+							}
+							BGM.play();
+						}
+					}
+				}
+				});
+		});
+//		听诗
+//		$(".play").click(function(){
+//			var num=$(this).data("id");
+//			var BGM=$("#audio"+num)[0];
+//			for(var i=0;i<15;i++){
+//				$(".audios")[i].pause();
+//			}
+//			BGM.play();
+//		})
+//		重新读诗
+		$(".reselect").click(function(){
+			$(".pay").fadeOut();
+			$(".poem").fadeIn()
+		});
+//		还要捐款
+		$(".haiyao").click(function(){
+			$(".pay,.endpage").fadeOut();
+			$(".poem").fadeIn()
+		});
+		$(".more").click(function(){
+			window.location.href="https://ssl.gongyi.qq.com/m/weixin/detail.htm?showwxpaytitle=1&pid=16018&et=wx_wallet&gt=sch&ADTAG=idx.m.sch&bid=&pt="
+		});
+//		金额选择
+		$(".mm").click(function(){
+			$(".mm").removeClass("act");
+			$(this).addClass("act");
+			$(".custom").val('');
+		});
+//		自定义输入
+		$(".custom").click(function(){
+			$(".mm").removeClass("act");
+		})
+		var mark;
+//		头像
+		var headsrc="img/head.jpg";
+		var urls="img/poemfinal_1.png";
+		$(".liu-btn").click(function(){
+			$(".poem").fadeOut();
+			$(".pay").fadeIn();
+			mark=$(".swiper-slide-active").find(".play").data("id");
+			urls=poem1[mark];
+			for(var i=0;i<15;i++){
+				$(".audios")[i].pause();
+			}
+		});
+		function payfor(){
+			if(!$(".mm").hasClass("act")&&$(".custom").val()==""){
+				alert("请选择或输入金额")
+			}else{
+				suc()
+			}
+		};
+//		付款成功成功
+		function suc(){
+			$(".endpage").fadeIn();
+			$(".poemin").attr("src",urls);
+			$(".head").attr("src",headsrc);
+//			头像处理
+			var nan2 = new Image();
+		    	nan2.src=headsrc;
+		  	    var endImg2Base64;
+		    	var radius, diameter, canvas, ctx, natural;
+			        radius = nan2.width / 2;
+			        diameter = radius * 2;
+			        canvas = document.createElement('canvas');
+					    canvas.width = diameter;
+					    canvas.height = diameter;
+					    contex = canvas.getContext("2d");
+					    contex.clearRect(0, 0, diameter, diameter);
+					    contex.save();
+					    contex.beginPath();
+					    contex.arc(radius, radius, radius, 0, Math.PI * 2, false);
+					    contex.clip();
+					    contex.drawImage(nan2, 0, 0, nan2.width, nan2.width, 0, 0, diameter, diameter);
+					    contex.restore();
+					    endImg2Base64 = canvas.toDataURL('image/png',0.9);
+					    
+			var c=document.createElement("canvas");
+		    c.width=640;
+		    c.height=1137;
+		    var ctx=c.getContext("2d");
+		    var imgBg = new Image();
+		    imgBg.src = "img/result.jpg";
+		    imgBg.onload = function(){
+		        ctx.drawImage(imgBg,0,0,640,1137);
+			 	ctx.fillStyle = "#fff";
+			 	var nan1 = new Image();
+			 		nan1.src=urls;
+			 		console.log(urls)
+			 		nan1.onload = function(){
+			 			ctx.drawImage(nan1,100,400,440,442);
+			 			var nan2=new Image();
+			 			nan2.src=endImg2Base64;
+			 			nan2.onload=function(){
+			 				ctx.drawImage(nan2,262,156,114,114);
+			 				var qwqw = c.toDataURL('image/png',0.9);
+					    	$(".result").attr("src",qwqw);
+			 			}		    
+		           }
+		           }
+		}
+		//			输入
+			$('input').bind("blur",function(){
+				$("html,body").scrollTop(0);
+			}).bind("focus",function(){
+				$("html,body").scrollTop();
+			});
+	</script>
+</html>
